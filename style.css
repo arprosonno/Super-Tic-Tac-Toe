@@ -1,0 +1,123 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+}
+
+h1 {
+    margin: 20px 0;
+    font-size: 28px;
+}
+
+#game-status {
+    margin: 10px 0;
+    font-size: 20px;
+    color: #333;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    max-width: 90vw;
+}
+
+.small-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+    background-color: #fff;
+    border: 2px solid #333;
+    width: 30vw;
+    aspect-ratio: 1 / 1;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.small-board.highlight {
+    border-color: green;
+    box-shadow: 0 0 10px green;
+}
+
+.cell {
+    width: 100%;
+    height: 100%;
+    font-size: 5vw;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    min-width: 30px;
+    min-height: 30px;
+}
+
+.cell.disabled {
+    cursor: not-allowed;
+    background-color: #ddd;
+}
+
+.cell.X {
+    color: #ff6347;
+}
+
+.cell.O {
+    color: #4682b4;
+}
+
+.winner-block {
+    font-size: 6vw;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    line-height: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#restart-button {
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    #board {
+        max-width: 95vw;
+        gap: 3px;
+    }
+
+    .small-board {
+        width: 28vw;
+    }
+
+    .cell {
+        font-size: 6vw;
+    }
+
+    #restart-button {
+        font-size: 16px;
+        padding: 12px 25px;
+    }
+}
